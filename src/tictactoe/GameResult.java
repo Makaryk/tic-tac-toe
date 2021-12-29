@@ -1,3 +1,5 @@
+package tictactoe;
+
 enum GameResult {
     XWIN("X wins"),
     OWIN("O wins"),

@@ -1,3 +1,5 @@
+package tictactoe;
+
 import java.util.Scanner;
 
 class User extends Player {
@@ -18,8 +20,8 @@ class User extends Player {
             coordinates = scanner.nextLine();
             if (!checkCoords(coordinates)) {
                 gameCoordinates = new Coordinates(Integer.parseInt(String.valueOf(coordinates.charAt(0))), Integer.parseInt(String.valueOf(coordinates.charAt(2))));
-                if (!checkIfOccupied(gameCoordinates.getY(), gameCoordinates.getX())) {
-                    field.setFigure(gameCoordinates.getY(), gameCoordinates.getX(), figure);
+                if (!checkIfOccupied(gameCoordinates.getX(), gameCoordinates.getY())) {
+                    field.setFigure(gameCoordinates.getX(), gameCoordinates.getY(), figure);
                     correctInput = true;
                 }
             }
@@ -44,8 +46,8 @@ class User extends Player {
         return false;
     }
 
-    public boolean checkIfOccupied(int y, int x) {
-        if (field.getFigure(gameCoordinates.getY(), gameCoordinates.getX()) != ' ') {
+    public boolean checkIfOccupied(int x, int y) {
+        if (field.getFigure(gameCoordinates.getX(), gameCoordinates.getY()) != ' ') {
             System.out.println("This cell is occupied! Choose another one!");
             return true;
         }
